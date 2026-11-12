@@ -1,0 +1,167 @@
+{
+  "$comment": "Generado por tools/webProtection/compile.ts a partir de los snapshots de tools/webProtection/sources/. Reglas derivadas de EasyList/EasyPrivacy bajo CC BY-SA 3.0 (ver PROVENANCE.md).",
+  "guaranteedMinimumStaticRules": 30000,
+  "totalDnrRules": 107163,
+  "lists": [
+    {
+      "source": {
+        "id": "easylist",
+        "name": "EasyList",
+        "license": "Doble licencia: GPLv3 o posterior, o Creative Commons Attribution-ShareAlike 3.0",
+        "licenseUrl": "https://easylist.to/pages/licence.html"
+      },
+      "snapshot": {
+        "sha256": "58a88c5f79ccb2166b7be33c3cef7cce5386274824abbdfe4b83f5ef4c355e14",
+        "version": "202610050517",
+        "lastModified": "05 Oct 2026 05:17 UTC",
+        "fetchedAt": "2026-10-05T05:31:07.084Z"
+      },
+      "rulesetSha256": "924a3521d81b9f3b14da499fefd3627a4da290c4e804bddb727a8a475a591573",
+      "report": {
+        "listId": "easylist",
+        "category": "ads",
+        "totalLines": 79630,
+        "comments": 276,
+        "badfilterDirectives": 0,
+        "badfilterCancelled": 0,
+        "rejected": {
+          "document-block": 586,
+          "document-with-types": 3,
+          "option-cosmetic-scope": 169,
+          "option-unsupported:csp": 3,
+          "option-unsupported:popup": 2949,
+          "option-unsupported:rewrite": 7,
+          "pattern-dnr-invalid": 3,
+          "regex-filter": 22
+        },
+        "rejectedTotal": 3742,
+        "deferredCosmetic": {
+          "cosmetic-hide": 24006,
+          "cosmetic-exception": 337,
+          "procedural": 287
+        },
+        "deferredCosmeticTotal": 24630,
+        "accepted": 50982,
+        "acceptedExceptions": 541,
+        "duplicatesRemoved": 1,
+        "dnrRules": 50981,
+        "check": {
+          "sumsToTotal": true
+        }
+      }
+    },
+    {
+      "source": {
+        "id": "easyprivacy",
+        "name": "EasyPrivacy",
+        "license": "Doble licencia: GPLv3 o posterior, o Creative Commons Attribution-ShareAlike 3.0",
+        "licenseUrl": "https://easylist.to/pages/licence.html"
+      },
+      "snapshot": {
+        "sha256": "143727e03d4a7df342fc5b7b69d982d97c6a355efcb208219eceb82e4a23ead1",
+        "version": "202610050523",
+        "lastModified": "05 Oct 2026 05:23 UTC",
+        "fetchedAt": "2026-10-05T05:31:07.569Z"
+      },
+      "rulesetSha256": "cbc03b904f1ee53d93efae3d10df4b1fc9c67a197685c1a6bf78544ed234b3b5",
+      "report": {
+        "listId": "easyprivacy",
+        "category": "trackers",
+        "totalLines": 57035,
+        "comments": 772,
+        "badfilterDirectives": 0,
+        "badfilterCancelled": 0,
+        "rejected": {
+          "domain-entity": 1,
+          "domain-invalid": 2,
+          "option-unsupported:csp": 2,
+          "option-unsupported:method": 1,
+          "option-unsupported:redirect": 28,
+          "option-unsupported:redirect-rule": 1,
+          "option-unsupported:rewrite": 1,
+          "pattern-universal": 1,
+          "regex-filter": 7
+        },
+        "rejectedTotal": 44,
+        "deferredCosmetic": {
+          "cosmetic-hide": 6,
+          "scriptlet": 28,
+          "html-filter": 1
+        },
+        "deferredCosmeticTotal": 35,
+        "accepted": 56184,
+        "acceptedExceptions": 846,
+        "duplicatesRemoved": 2,
+        "dnrRules": 56182,
+        "check": {
+          "sumsToTotal": true
+        }
+      }
+    }
+  ],
+  "cosmetic": {
+    "sha256": "f70900d37be80bea9fd5455485e4092c9c9e3094950b0b2cc48206debd9dc321",
+    "lists": [
+      {
+        "listId": "easylist",
+        "report": {
+          "totalLines": 24630,
+          "domainSpecificHide": 9740,
+          "domainSpecificAllow": 336,
+          "skipped": {
+            "generic": 13635,
+            "negated-only": 0,
+            "extended-syntax": 293,
+            "invalid-domain": 222,
+            "unsafe-selector": 404,
+            "too-long": 0
+          },
+          "domains": 7601,
+          "selectors": 15973
+        }
+      }
+    ]
+  },
+  "popupEvidence": {
+    "sha256": "f36a3a28ab170167926f8a06ffc3d828c460f472e81cb60f78da3964b8d7e158",
+    "report": {
+      "hosts": 48442,
+      "patterns": 159,
+      "exceptionHosts": 29,
+      "exceptionPatterns": 6,
+      "skipped": {
+        "domain-restricted": 536,
+        "badfilter": 0,
+        "unsupported": 458,
+        "regex": 13,
+        "too-complex": 0
+      }
+    }
+  },
+  "partition": {
+    "coreRuleBudget": 25000,
+    "coreRuleCount": 25000,
+    "optionalChunkSize": 5000,
+    "rulesets": 19,
+    "perList": [
+      {
+        "listId": "easylist",
+        "rules": 50981,
+        "exceptions": 541,
+        "blocks": 50440,
+        "coreBlocks": 11260,
+        "optionalBlocks": 39180,
+        "optionalRulesets": 8
+      },
+      {
+        "listId": "easyprivacy",
+        "rules": 56182,
+        "exceptions": 846,
+        "blocks": 55336,
+        "coreBlocks": 12353,
+        "optionalBlocks": 42983,
+        "optionalRulesets": 9
+      }
+    ]
+  }
+}

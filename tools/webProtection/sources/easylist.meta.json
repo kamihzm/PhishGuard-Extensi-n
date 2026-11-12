@@ -1,0 +1,10 @@
+{
+  "id": "easylist",
+  "url": "https://easylist.to/easylist/easylist.txt",
+  "fetchedAt": "2026-10-05T05:31:07.084Z",
+  "sha256": "58a88c5f79ccb2166b7be33c3cef7cce5386274824abbdfe4b83f5ef4c355e14",
+  "bytes": 2094324,
+  "lines": 79630,
+  "version": "202610050517",
+  "lastModified": "05 Oct 2026 05:17 UTC"
+}

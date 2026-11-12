@@ -1,0 +1,27 @@
+{
+  "$comment": "Fuentes de listas de Web Protection. Solo las marcadas approvedForBundling se descargan y compilan. Licencias verificadas en fuente primaria el 2026-09-29 — ver docs/web-protection-audit.md §2 y PROVENANCE.md.",
+  "sources": [
+    {
+      "id": "easylist",
+      "name": "EasyList",
+      "category": "ads",
+      "url": "https://easylist.to/easylist/easylist.txt",
+      "homepage": "https://easylist.to/",
+      "license": "Doble licencia: GPLv3 o posterior, o Creative Commons Attribution-ShareAlike 3.0",
+      "licenseUrl": "https://easylist.to/pages/licence.html",
+      "redistribution": "Permitida como archivo de datos bajo CC BY-SA 3.0, con atribución a EasyList y las reglas derivadas bajo la misma licencia.",
+      "approvedForBundling": true
+    },
+    {
+      "id": "easyprivacy",
+      "name": "EasyPrivacy",
+      "category": "trackers",
+      "url": "https://easylist.to/easylist/easyprivacy.txt",
+      "homepage": "https://easylist.to/",
+      "license": "Doble licencia: GPLv3 o posterior, o Creative Commons Attribution-ShareAlike 3.0",
+      "licenseUrl": "https://easylist.to/pages/licence.html",
+      "redistribution": "Permitida como archivo de datos bajo CC BY-SA 3.0, con atribución a EasyList y las reglas derivadas bajo la misma licencia.",
+      "approvedForBundling": true
+    }
+  ]
+}

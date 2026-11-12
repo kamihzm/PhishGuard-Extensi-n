@@ -1,0 +1,216 @@
+{
+  "guaranteedMinimumStaticRules": 30000,
+  "coreRuleBudget": 25000,
+  "optionalChunkSize": 5000,
+  "rulesets": [
+    {
+      "id": "wp-easylist-core",
+      "listId": "easylist",
+      "category": "ads",
+      "tier": "core",
+      "ruleCount": 11801,
+      "exceptionCount": 541,
+      "order": 0,
+      "path": "generated/rulesets/wp-easylist-core.json",
+      "sha256": "0884d7be8295b2d1bf9621c43495a21f4db4b76854c87e7c3d5b83906f1a85fe"
+    },
+    {
+      "id": "wp-easyprivacy-core",
+      "listId": "easyprivacy",
+      "category": "trackers",
+      "tier": "core",
+      "ruleCount": 13199,
+      "exceptionCount": 846,
+      "order": 0,
+      "path": "generated/rulesets/wp-easyprivacy-core.json",
+      "sha256": "0198573a0f6c022d6600257c58ea3010a7e1c2471ee78ff82a5c5f90aa462d2c"
+    },
+    {
+      "id": "wp-easylist-opt-01",
+      "listId": "easylist",
+      "category": "ads",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 1,
+      "path": "generated/rulesets/wp-easylist-opt-01.json",
+      "sha256": "d23e71cd1f7103c3b2148b32cca12927a5d2e958a3bd24ba7bd8a09a6766ae02"
+    },
+    {
+      "id": "wp-easyprivacy-opt-01",
+      "listId": "easyprivacy",
+      "category": "trackers",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 2,
+      "path": "generated/rulesets/wp-easyprivacy-opt-01.json",
+      "sha256": "6331a5c134a8f46fed9c99eb20414e568c3c86b739130c1667025056f0a1e352"
+    },
+    {
+      "id": "wp-easylist-opt-02",
+      "listId": "easylist",
+      "category": "ads",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 3,
+      "path": "generated/rulesets/wp-easylist-opt-02.json",
+      "sha256": "e1967db8b93f3891466c56aa3f38ca99206111241fe832479c18e84b0f3654cf"
+    },
+    {
+      "id": "wp-easyprivacy-opt-02",
+      "listId": "easyprivacy",
+      "category": "trackers",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 4,
+      "path": "generated/rulesets/wp-easyprivacy-opt-02.json",
+      "sha256": "97031159482fc823d1e0c6dea35fd1989ebc68ab1366297208277120a8a3809f"
+    },
+    {
+      "id": "wp-easylist-opt-03",
+      "listId": "easylist",
+      "category": "ads",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 5,
+      "path": "generated/rulesets/wp-easylist-opt-03.json",
+      "sha256": "06b5a8a2cc4ff9308def2933976613df2ac61a919b141eae5f71f7103572be83"
+    },
+    {
+      "id": "wp-easyprivacy-opt-03",
+      "listId": "easyprivacy",
+      "category": "trackers",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 6,
+      "path": "generated/rulesets/wp-easyprivacy-opt-03.json",
+      "sha256": "67372aeba10bcb78fa4197ca59cb5ac9f2535721e0501b31fa078628c20ab56b"
+    },
+    {
+      "id": "wp-easylist-opt-04",
+      "listId": "easylist",
+      "category": "ads",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 7,
+      "path": "generated/rulesets/wp-easylist-opt-04.json",
+      "sha256": "8e99a1b59b56c8e59336a6323cc05766a5307c45d75b5f289bfa90e8b59439b6"
+    },
+    {
+      "id": "wp-easyprivacy-opt-04",
+      "listId": "easyprivacy",
+      "category": "trackers",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 8,
+      "path": "generated/rulesets/wp-easyprivacy-opt-04.json",
+      "sha256": "218d9bb42a094d1d13bd3aa89eff47822ed2316c1c931c9bc62272d24d5d8903"
+    },
+    {
+      "id": "wp-easylist-opt-05",
+      "listId": "easylist",
+      "category": "ads",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 9,
+      "path": "generated/rulesets/wp-easylist-opt-05.json",
+      "sha256": "cb3b730c7357d512fdce2b345a81a39d02fb6a8fe47e803241727b7a0e8a80f9"
+    },
+    {
+      "id": "wp-easyprivacy-opt-05",
+      "listId": "easyprivacy",
+      "category": "trackers",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 10,
+      "path": "generated/rulesets/wp-easyprivacy-opt-05.json",
+      "sha256": "3a9364b23429f8670f98f407d04e374a6b671a258a3949d5e1f7e4b160de7c05"
+    },
+    {
+      "id": "wp-easylist-opt-06",
+      "listId": "easylist",
+      "category": "ads",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 11,
+      "path": "generated/rulesets/wp-easylist-opt-06.json",
+      "sha256": "72da2848f3f7a645c21aeaf891eadb1595a6a622b7b5037a35c5de26e28bcd18"
+    },
+    {
+      "id": "wp-easyprivacy-opt-06",
+      "listId": "easyprivacy",
+      "category": "trackers",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 12,
+      "path": "generated/rulesets/wp-easyprivacy-opt-06.json",
+      "sha256": "87f7344b28b4ba42ebe12461f668aaddee1b763a0d0be5230a6d27184f3587c8"
+    },
+    {
+      "id": "wp-easylist-opt-07",
+      "listId": "easylist",
+      "category": "ads",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 13,
+      "path": "generated/rulesets/wp-easylist-opt-07.json",
+      "sha256": "871088028d0d663340650f65eaa58ac260757c2e38630e8e031f8c5643c6eec3"
+    },
+    {
+      "id": "wp-easyprivacy-opt-07",
+      "listId": "easyprivacy",
+      "category": "trackers",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 14,
+      "path": "generated/rulesets/wp-easyprivacy-opt-07.json",
+      "sha256": "a5c24e4f8b8178e17b590a53d1657f7db6faf2d7ef52a08b574879a25e3540d0"
+    },
+    {
+      "id": "wp-easylist-opt-08",
+      "listId": "easylist",
+      "category": "ads",
+      "tier": "optional",
+      "ruleCount": 4180,
+      "exceptionCount": 0,
+      "order": 15,
+      "path": "generated/rulesets/wp-easylist-opt-08.json",
+      "sha256": "c55ad189c45c4ed5c10d9a12b16c7941828f90be3bd07962e2973b636ba03d7e"
+    },
+    {
+      "id": "wp-easyprivacy-opt-08",
+      "listId": "easyprivacy",
+      "category": "trackers",
+      "tier": "optional",
+      "ruleCount": 5000,
+      "exceptionCount": 0,
+      "order": 16,
+      "path": "generated/rulesets/wp-easyprivacy-opt-08.json",
+      "sha256": "77f88652a5b56742e4dc8bc5441c049ac748323e09708999356a00911e6d9276"
+    },
+    {
+      "id": "wp-easyprivacy-opt-09",
+      "listId": "easyprivacy",
+      "category": "trackers",
+      "tier": "optional",
+      "ruleCount": 2983,
+      "exceptionCount": 0,
+      "order": 17,
+      "path": "generated/rulesets/wp-easyprivacy-opt-09.json",
+      "sha256": "6b1aee7068448560d067e696dbd5949d9c95694a34256952ae9490adef0eddda"
+    }
+  ]
+}

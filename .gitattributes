@@ -1,0 +1,4 @@
+# Snapshots de listas de Web Protection: bytes exactos (sin conversión de
+# fin de línea) para que su SHA-256 registrado en <id>.meta.json siga
+# coincidiendo en cualquier checkout y la compilación sea reproducible.
+tools/webProtection/sources/*.txt -text

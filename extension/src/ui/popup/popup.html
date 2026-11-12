@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PhishGuard</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <svg
+        class="header-logo"
+        viewBox="0 0 24 24"
+        width="22"
+        height="22"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+      <p class="header-title">PhishGuard</p>
+    </header>
+    <nav class="tab-bar" role="tablist" aria-label="Secciones de PhishGuard">
+      <button
+        type="button"
+        role="tab"
+        id="tab-analysis"
+        class="tab-button tab-button-active"
+        data-tab="analysis"
+        aria-selected="true"
+        aria-controls="analysis-panel"
+      >
+        Este sitio
+      </button>
+      <button
+        type="button"
+        role="tab"
+        id="tab-history"
+        class="tab-button"
+        data-tab="history"
+        aria-selected="false"
+        aria-controls="history-panel"
+        tabindex="-1"
+      >
+        Historial
+      </button>
+      <button
+        type="button"
+        role="tab"
+        id="tab-stats"
+        class="tab-button"
+        data-tab="stats"
+        aria-selected="false"
+        aria-controls="stats-panel"
+        tabindex="-1"
+      >
+        Resumen
+      </button>
+      <button
+        type="button"
+        role="tab"
+        id="tab-config"
+        class="tab-button"
+        data-tab="config"
+        aria-selected="false"
+        aria-controls="config-panel"
+        tabindex="-1"
+      >
+        Ajustes
+      </button>
+    </nav>
+    <main>
+      <div id="analysis-panel" role="tabpanel" aria-labelledby="tab-analysis">
+        <div id="analysis-trust-banner"></div>
+        <div id="analysis-content" aria-live="polite">
+          <p class="unavailable">Analizando…</p>
+        </div>
+      </div>
+      <div id="history-panel" role="tabpanel" aria-labelledby="tab-history" hidden></div>
+      <div id="stats-panel" role="tabpanel" aria-labelledby="tab-stats" hidden>
+        <div id="stats-content"></div>
+      </div>
+      <div id="config-panel" role="tabpanel" aria-labelledby="tab-config" hidden>
+        <div id="config-settings"></div>
+        <div id="config-web-protection"></div>
+        <div id="config-trusted-summary"></div>
+        <div id="config-trusted-details"></div>
+        <div id="config-privacy"></div>
+      </div>
+    </main>
+    <script type="module" src="./popup.ts"></script>
+  </body>
+</html>

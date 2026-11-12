@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2022", "DOM"],
+    "types": ["chrome", "node", "vite/client", "vitest/globals"],
+    // `../training/*.test.ts` vive fuera de `extension/`, así que la
+    // resolución normal de node_modules (que camina hacia arriba desde el
+    // archivo) no encuentra `extension/node_modules/vitest`; se lo indicamos
+    // explícitamente solo para type-checking.
+    "paths": { "vitest": ["./node_modules/vitest"] },
+    "resolveJsonModule": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+  // `../training` es un paquete offline hermano que reutiliza extension/src/*
+  // (ver plan de arquitectura) y se type-checkea en el mismo programa que la
+  // extensión para no duplicar tsconfig/node_modules. `../tools` (compilador
+  // offline de Web Protection) sigue el mismo criterio.
+  "include": ["src", "../training", "../tools"],
+  "exclude": ["../training/data", "../tools/webProtection/sources", "../tools/webProtection/out"]
+}

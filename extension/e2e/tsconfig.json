@@ -1,0 +1,11 @@
+{
+  // Type-checks the Playwright E2E suite (Node side + code evaluated in the
+  // extension service worker, hence the `chrome` types). Run: npx tsc -p e2e
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": ["chrome", "node"],
+    "paths": {}
+  },
+  "include": [".", "../playwright.config.ts"],
+  "exclude": []
+}

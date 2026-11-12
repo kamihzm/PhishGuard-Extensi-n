@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.log
+extension/generated/
+extension/test-results/
+extension/playwright-report/
+tools/webProtection/out/*.rules.json

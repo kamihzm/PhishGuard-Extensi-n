@@ -1,0 +1,226 @@
+[
+  {
+    "description": "URL legítima simple, HTTPS, sin señales sospechosas",
+    "url": "https://www.google.com/search?q=hola",
+    "expected": {
+      "urlLength": 36,
+      "domainLength": 14,
+      "subdomainCount": 1,
+      "isIpHost": false,
+      "hasPunycode": false,
+      "hasAtSymbol": false,
+      "hyphenCount": 0,
+      "hasSuspiciousTld": false,
+      "sensitiveWordCount": 0,
+      "isHttps": true
+    }
+  },
+  {
+    "description": "Dominio con guiones, TLD sospechoso, HTTP y palabras sensibles",
+    "url": "http://banco-colombia-verificar-cuenta.top/login",
+    "expected": {
+      "urlLength": 48,
+      "domainLength": 35,
+      "subdomainCount": 0,
+      "isIpHost": false,
+      "hasPunycode": false,
+      "hasAtSymbol": false,
+      "hyphenCount": 3,
+      "hasSuspiciousTld": true,
+      "sensitiveWordCount": 3,
+      "isHttps": false
+    }
+  },
+  {
+    "description": "Host como dirección IPv4",
+    "url": "http://192.168.1.50/login?verificar=1",
+    "expected": {
+      "urlLength": 37,
+      "domainLength": 12,
+      "subdomainCount": 0,
+      "isIpHost": true,
+      "hasPunycode": false,
+      "hasAtSymbol": false,
+      "hyphenCount": 0,
+      "hasSuspiciousTld": false,
+      "sensitiveWordCount": 2,
+      "isHttps": false
+    }
+  },
+  {
+    "description": "Host como dirección IPv6",
+    "url": "http://[2001:db8::1]/login",
+    "expected": {
+      "urlLength": 26,
+      "domainLength": 13,
+      "subdomainCount": 0,
+      "isIpHost": true,
+      "hasPunycode": false,
+      "hasAtSymbol": false,
+      "hyphenCount": 0,
+      "hasSuspiciousTld": false,
+      "sensitiveWordCount": 1,
+      "isHttps": false
+    }
+  },
+  {
+    "description": "Dominio en Punycode (suplantación visual de \"paypal\")",
+    "url": "https://xn--pypal-4ve.com/account",
+    "expected": {
+      "urlLength": 33,
+      "domainLength": 17,
+      "subdomainCount": 0,
+      "isIpHost": false,
+      "hasPunycode": true,
+      "hasAtSymbol": false,
+      "hyphenCount": 3,
+      "hasSuspiciousTld": false,
+      "sensitiveWordCount": 1,
+      "isHttps": true
+    }
+  },
+  {
+    "description": "Truco del símbolo @ (el navegador navega a evil-login.top, no a google.com)",
+    "url": "http://accounts.google.com@evil-login.top/",
+    "expected": {
+      "urlLength": 42,
+      "domainLength": 14,
+      "subdomainCount": 0,
+      "isIpHost": false,
+      "hasPunycode": false,
+      "hasAtSymbol": true,
+      "hyphenCount": 1,
+      "hasSuspiciousTld": true,
+      "sensitiveWordCount": 2,
+      "isHttps": false
+    }
+  },
+  {
+    "description": "Solo usuario (sin contraseña) antes del @ también cuenta como userinfo",
+    "url": "http://usuario@evil.com/",
+    "expected": {
+      "urlLength": 24,
+      "domainLength": 8,
+      "subdomainCount": 0,
+      "isIpHost": false,
+      "hasPunycode": false,
+      "hasAtSymbol": true,
+      "hyphenCount": 0,
+      "hasSuspiciousTld": false,
+      "sensitiveWordCount": 0,
+      "isHttps": false
+    }
+  },
+  {
+    "description": "Handle de canal de YouTube: el @ está en el pathname, NO es userinfo — no debe activar at-symbol",
+    "url": "https://www.youtube.com/@MegaSawaya",
+    "expected": {
+      "urlLength": 35,
+      "domainLength": 15,
+      "subdomainCount": 1,
+      "isIpHost": false,
+      "hasPunycode": false,
+      "hasAtSymbol": false,
+      "hyphenCount": 0,
+      "hasSuspiciousTld": false,
+      "sensitiveWordCount": 0,
+      "isHttps": true
+    }
+  },
+  {
+    "description": "Sufijo compuesto .com.co sin subdominio (institución colombiana)",
+    "url": "https://ejemplo.com.co/",
+    "expected": {
+      "urlLength": 23,
+      "domainLength": 14,
+      "subdomainCount": 0,
+      "isIpHost": false,
+      "hasPunycode": false,
+      "hasAtSymbol": false,
+      "hyphenCount": 0,
+      "hasSuspiciousTld": false,
+      "sensitiveWordCount": 0,
+      "isHttps": true
+    }
+  },
+  {
+    "description": "Banco colombiano legítimo bajo .com.co, no debe contarse como subdominio",
+    "url": "https://banco.com.co/login",
+    "expected": {
+      "urlLength": 26,
+      "domainLength": 12,
+      "subdomainCount": 0,
+      "isIpHost": false,
+      "hasPunycode": false,
+      "hasAtSymbol": false,
+      "hyphenCount": 0,
+      "hasSuspiciousTld": false,
+      "sensitiveWordCount": 2,
+      "isHttps": true
+    }
+  },
+  {
+    "description": "Entidad de gobierno colombiana bajo .gov.co",
+    "url": "https://entidad.gov.co/tramites",
+    "expected": {
+      "urlLength": 31,
+      "domainLength": 14,
+      "subdomainCount": 0,
+      "isIpHost": false,
+      "hasPunycode": false,
+      "hasAtSymbol": false,
+      "hyphenCount": 0,
+      "hasSuspiciousTld": false,
+      "sensitiveWordCount": 0,
+      "isHttps": true
+    }
+  },
+  {
+    "description": "Universidad colombiana bajo .edu.co",
+    "url": "https://universidad.edu.co/estudiantes",
+    "expected": {
+      "urlLength": 38,
+      "domainLength": 18,
+      "subdomainCount": 0,
+      "isIpHost": false,
+      "hasPunycode": false,
+      "hasAtSymbol": false,
+      "hyphenCount": 0,
+      "hasSuspiciousTld": false,
+      "sensitiveWordCount": 0,
+      "isHttps": true
+    }
+  },
+  {
+    "description": "Banco colombiano con www: solo www cuenta como subdominio, no com+co",
+    "url": "https://www.banco.com.co/login",
+    "expected": {
+      "urlLength": 30,
+      "domainLength": 16,
+      "subdomainCount": 1,
+      "isIpHost": false,
+      "hasPunycode": false,
+      "hasAtSymbol": false,
+      "hyphenCount": 0,
+      "hasSuspiciousTld": false,
+      "sensitiveWordCount": 2,
+      "isHttps": true
+    }
+  },
+  {
+    "description": "Ataque de 'subdomain padding': marca colombiana usada como subdominio falso de un dominio real distinto",
+    "url": "http://bancolombia.com.co.evil-site.top/login",
+    "expected": {
+      "urlLength": 45,
+      "domainLength": 32,
+      "subdomainCount": 3,
+      "isIpHost": false,
+      "hasPunycode": false,
+      "hasAtSymbol": false,
+      "hyphenCount": 1,
+      "hasSuspiciousTld": true,
+      "sensitiveWordCount": 2,
+      "isHttps": false
+    }
+  }
+]

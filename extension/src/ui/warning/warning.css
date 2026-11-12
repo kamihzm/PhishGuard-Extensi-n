@@ -1,0 +1,373 @@
+/*
+ * Página de advertencia — Dirección A «Claro y directo»
+ * (docs/ui-redesign/README.md). Mismos tokens que el popup: tema claro que
+ * sigue al sistema, un único acento azul, rojo solo para el riesgo,
+ * Atkinson Hyperlegible local y textos de 13 px o más. Una sola acción
+ * principal; continuar y confiar son enlaces discretos.
+ */
+
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/AtkinsonHyperlegible-Bold.woff2') format('woff2');
+}
+
+:root {
+  color-scheme: light;
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-hover: #eef1f5;
+  --border: #d9dee5;
+  --text: #111827;
+  --text-secondary: #4b5563;
+  --accent: #1d4ed8;
+  --accent-hover: #1e40af;
+  --on-accent: #ffffff;
+  --focus: #1d4ed8;
+  --high-text: #991b1b;
+  --high-bg: #fee2e2;
+  --high-border: #fca5a5;
+  --high-solid: #b91c1c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #0f141c;
+    --surface: #171e2a;
+    --surface-hover: #212a39;
+    --border: #2f3a4c;
+    --text: #e8ecf3;
+    --text-secondary: #aab4c3;
+    --accent: #8db4ff;
+    --accent-hover: #b3cdff;
+    --on-accent: #0b1220;
+    --focus: #8db4ff;
+    --high-text: #fca5a5;
+    --high-bg: #321416;
+    --high-border: #8a2c2c;
+    --high-solid: #f87171;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    'Atkinson Hyperlegible',
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0 16px 48px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+button,
+summary {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Franja roja arriba: el nivel se ve antes de leer nada. */
+.risk-stripe {
+  height: 8px;
+  margin: 0 -16px 40px;
+  background: var(--high-solid);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.warning-card {
+  width: 100%;
+  max-width: 620px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--high-solid);
+  border-radius: 14px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+.brand-icon {
+  display: flex;
+  color: var(--high-text);
+}
+
+.headline {
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 700;
+  color: var(--high-text);
+}
+.short-explanation {
+  font-size: 17px;
+  margin-top: -8px;
+}
+
+/* --- Destino real --- */
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+.card-label,
+.section-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+.destination-label {
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+.destination-apparent {
+  color: var(--text);
+}
+.destination-domain {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.analyzed-url {
+  margin-top: 4px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  word-break: break-all;
+}
+
+/* --- Motivos: sin caja, numerados --- */
+.signals {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.signal-list {
+  margin: 0;
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.signal-list li::marker {
+  font-weight: 700;
+  color: var(--high-text);
+}
+.no-hits {
+  color: var(--text-secondary);
+}
+
+.tip {
+  background: var(--high-bg);
+  border: 1px solid var(--high-border);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+.tip .section-label {
+  color: var(--high-text);
+}
+
+/* --- Acciones --- */
+.btn-safe {
+  width: 100%;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-safe:hover {
+  background: var(--accent-hover);
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.actions .btn-continue {
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.secondary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px 20px;
+  margin-top: -6px;
+}
+.btn-continue,
+.link-trust {
+  background: none;
+  border: 0;
+  padding: 4px 2px;
+  color: var(--text-secondary);
+  font-size: 15px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.btn-continue:hover,
+.link-trust:hover {
+  color: var(--text);
+}
+
+.trust-section {
+  max-width: 100%;
+}
+.trust-confirm-text {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+.trust-confirm-actions {
+  display: flex;
+  gap: 8px;
+}
+.btn-trust-confirm,
+.btn-trust-cancel {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+.btn-trust-confirm:hover,
+.btn-trust-cancel:hover {
+  background: var(--surface-hover);
+}
+
+/* --- Detalles técnicos --- */
+.tech-details {
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+.tech-summary,
+.advanced-summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  list-style: none;
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 15px;
+}
+.tech-summary::-webkit-details-marker,
+.advanced-summary::-webkit-details-marker {
+  display: none;
+}
+.tech-summary::before,
+.advanced-summary::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+.tech-details[open] > .tech-summary::before,
+.advanced-details[open] > .advanced-summary::before {
+  transform: rotate(45deg);
+}
+.tech-summary:hover,
+.advanced-summary:hover {
+  color: var(--accent-hover);
+}
+.tech-body {
+  padding-top: 6px;
+  font-size: 15px;
+}
+.analysis-result {
+  font-size: 17px;
+  font-weight: 700;
+}
+.legend,
+.advanced-note {
+  color: var(--text-secondary);
+}
+.tech-heading {
+  margin: 14px 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+.analysis-findings,
+.tech-rule-list,
+.advanced-features {
+  margin: 0;
+  padding-left: 20px;
+}
+.analysis-findings li,
+.tech-rule-list li {
+  margin-bottom: 4px;
+}
+.advanced-features {
+  font-family: ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.privacy-footnote {
+  font-size: 14px;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.unavailable {
+  padding: 40px 0;
+  color: var(--text-secondary);
+}
